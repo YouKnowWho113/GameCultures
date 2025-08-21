@@ -97,7 +97,7 @@ public class BuffaloFight2P : MonoBehaviour
         }
     }
 
-    // Map WASD for Player 1
+    
     bool GetP1Input(KeyCode expected)
     {
         if (expected == KeyCode.UpArrow && Input.GetKeyDown(KeyCode.W)) return true;
@@ -107,7 +107,7 @@ public class BuffaloFight2P : MonoBehaviour
         return false;
     }
 
-    // Map Arrow Keys for Player 2
+    
     bool GetP2Input(KeyCode expected)
     {
         return Input.GetKeyDown(expected);
@@ -127,9 +127,9 @@ public class BuffaloFight2P : MonoBehaviour
 
     void UpdateSequenceText()
     {
-        // Show progress for both players with their own key labels
-        p1SequenceText.text = GetProgressString(currentIndexP1, true);  // WASD
-        p2SequenceText.text = GetProgressString(currentIndexP2, false); // Arrows
+        
+        p1SequenceText.text = GetProgressString(currentIndexP1, true);  
+        p2SequenceText.text = GetProgressString(currentIndexP2, false); 
     }
 
     string GetProgressString(int index, bool forPlayer1)
@@ -139,7 +139,7 @@ public class BuffaloFight2P : MonoBehaviour
         {
             if (i < index)
             {
-                result += " "; // pressed keys disappear
+                result += " "; 
             }
             else
             {
@@ -149,7 +149,7 @@ public class BuffaloFight2P : MonoBehaviour
         return result;
     }
 
-    // Show W/A/S/D for Player 1
+    
     string ArrowToWASD(KeyCode key)
     {
         switch (key)
@@ -162,7 +162,7 @@ public class BuffaloFight2P : MonoBehaviour
         return "";
     }
 
-    // Show arrows for Player 2
+    
     string ArrowToSymbol(KeyCode key)
     {
         switch (key)
