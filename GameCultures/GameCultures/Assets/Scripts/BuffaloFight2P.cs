@@ -15,6 +15,10 @@ public class BuffaloFight2P : MonoBehaviour
     private int round = 1;
     private bool roundOver = false;
 
+    
+
+    
+
     void Start()
     {
         GenerateSequence();
@@ -59,6 +63,7 @@ public class BuffaloFight2P : MonoBehaviour
                 if (currentIndexP1 == currentSequence.Count)
                 {
                     Debug.Log("Player 1 finished first!");
+                    Debug.Log("Minus health2");
                     roundOver = true;
                     NextRound();
                 }
