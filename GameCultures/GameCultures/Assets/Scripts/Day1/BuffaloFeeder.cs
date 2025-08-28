@@ -18,7 +18,7 @@ public class BuffaloFeeder : MonoBehaviour
         if (corn != null && corn.IsBeingCarried && !corn.consumed)
         {
             BuffaloStats.Instance.FeedCorn(corn);
-            // corn destroyed by BuffaloStats.FeedCorn(...)
+            
         }
     }
 }

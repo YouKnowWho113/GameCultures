@@ -15,7 +15,7 @@ public class CornTree : MonoBehaviour
     [Header("Cooldown Settings")]
     public float cooldownSeconds = 5f;
 
-    // state
+ 
     private bool isOnCooldown = false;
     private SpriteRenderer sr;
 
@@ -23,7 +23,6 @@ public class CornTree : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
 
-        // ensure the tree shows a sprite
         if (sr != null)
         {
             if (readySprite != null)
@@ -41,7 +40,7 @@ public class CornTree : MonoBehaviour
     {
         if (isOnCooldown) return;
 
-        // choose corn prefab (40% rotten, 60% fresh)
+        
         GameObject prefabToSpawn = (Random.value > 0.6f) ? freshCornPrefab : rottenCornPrefab;
 
         if (prefabToSpawn == null)
@@ -50,13 +49,13 @@ public class CornTree : MonoBehaviour
             return;
         }
 
-        // spawn just above tree
+        
         Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0);
         spawnPos.z = 0f;
         GameObject corn = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
         Debug.Log("Spawned corn: " + corn.name);
 
-        // ensure corn sprite is visible
+        
         var cornSr = corn.GetComponent<SpriteRenderer>();
         if (cornSr != null)
         {
@@ -65,7 +64,7 @@ public class CornTree : MonoBehaviour
                 Debug.LogError("Corn prefab has no sprite assigned!");
             }
 
-            // force visible layer
+            
             cornSr.sortingLayerName = "Default";
             cornSr.sortingOrder = 999;
             cornSr.color = Color.white;
@@ -75,7 +74,7 @@ public class CornTree : MonoBehaviour
             Debug.LogError("Corn prefab missing SpriteRenderer!");
         }
 
-        // switch tree to cooldown
+        
         if (sr != null && cooldownSprite != null)
         {
             sr.sprite = cooldownSprite;

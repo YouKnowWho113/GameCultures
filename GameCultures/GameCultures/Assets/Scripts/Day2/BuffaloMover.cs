@@ -21,20 +21,24 @@ public class BuffaloMover : MonoBehaviour
 
         if (spamScript.IsExhausted)
         {
-            // Don’t move
+            
             rb.velocity = Vector2.zero;
             return;
         }
 
         float power = spamScript.CurrentPower;
 
-        if (power < spamScript.SlowThreshold)
+        if (power < 90)
         {
-            rb.velocity = new Vector2(slowSpeed, rb.velocity.y);  // move slowly
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else if (power < spamScript.SlowThreshold)
+        {
+            rb.velocity = new Vector2(slowSpeed, rb.velocity.y);  
         }
         else if (power <= spamScript.FastThreshold)
         {
-            rb.velocity = new Vector2(fastSpeed, rb.velocity.y);  // max speed
+            rb.velocity = new Vector2(fastSpeed, rb.velocity.y);  
         }
     }
 }

@@ -8,7 +8,7 @@ public class BuffaloStats : MonoBehaviour
     public static BuffaloStats Instance { get; private set; }
 
     [Header("UI")]
-    public Slider growthBar;            // link your Slider in inspector
+    public Slider growthBar;            
     public string barName = "Growth Bar";
 
     [Header("Values")]
@@ -17,7 +17,7 @@ public class BuffaloStats : MonoBehaviour
 
     [Header("Nutrition")]
     public float nutritionFresh = 15f;
-    public float nutritionRotten = -10f; // set 0 if you prefer no penalty
+    public float nutritionRotten = -10f; 
 
     void Awake()
     {

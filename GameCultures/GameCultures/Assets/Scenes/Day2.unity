@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spamScript: {fileID: 1205942973}
-  slowSpeed: 0.1
+  slowSpeed: 0.2
   fastSpeed: 0.3
 --- !u!212 &209742607
 SpriteRenderer:
@@ -775,7 +775,7 @@ MonoBehaviour:
   lineMin: {fileID: 351327793}
   maxPower: 200
   powerDecay: 50
-  gainPerPress: 20
+  gainPerPress: 15
   slowThreshold: 120
   fastThreshold: 170
   minThreshold: 90

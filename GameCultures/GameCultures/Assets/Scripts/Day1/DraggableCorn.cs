@@ -8,13 +8,13 @@ using UnityEngine;
 public class DraggableCorn : MonoBehaviour
 {
     [Header("Corn Type")]
-    public bool isFresh = true; // rotten = false
+    public bool isFresh = true; 
 
     [Header("Pickup")]
     public float holdToPickSeconds = 0.15f;
     public float pickedScale = 1.15f;
 
-    // state
+ 
     public bool IsBeingCarried { get; private set; }
     public bool consumed { get; private set; }
 
@@ -55,7 +55,7 @@ public class DraggableCorn : MonoBehaviour
             IsBeingCarried = false;
             transform.localScale = originalScale;
 
-            // 🔹 allow physics so it can fall
+            
             if (rb != null)
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
@@ -87,10 +87,10 @@ public class DraggableCorn : MonoBehaviour
     void PickUp()
     {
         IsBeingCarried = true;
-        isHoldingMouse = true; // 🔹 ensure drag follows immediately
+        isHoldingMouse = true; 
         transform.localScale = originalScale * pickedScale;
 
-        // 🔹 disable physics while being carried
+        
         if (rb != null)
         {
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -100,7 +100,7 @@ public class DraggableCorn : MonoBehaviour
     public void AutoPick()
     {
         if (consumed) return;
-        holdTimer = holdToPickSeconds; // simulate "held long enough"
+        holdTimer = holdToPickSeconds; 
         PickUp();
     }
 
@@ -111,7 +111,7 @@ public class DraggableCorn : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // 🔹 Any corn that touches ground is destroyed
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!IsBeingCarried && collision.gameObject.CompareTag("Ground"))
