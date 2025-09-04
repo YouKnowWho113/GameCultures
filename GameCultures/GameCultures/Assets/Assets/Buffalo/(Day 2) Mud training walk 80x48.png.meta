@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cd78394725072141a406fb728a9bdf5
+guid: e58afe67cdfc76e44a6539de731851a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: The corn field_0
+      name: (Day 2) Mud training walk 80x48_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 9
+        y: 12
+        width: 68
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c06d735224e46f3499c4519166c923b5
-      internalID: 2026766261
+      spriteID: 6dd4d5836dbb7c9429b3840e61a77f85
+      internalID: -1676075612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_1
+      name: (Day 2) Mud training walk 80x48_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
+        x: 86
+        y: 13
+        width: 68
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef5049af6d9a6541a476b74142d3c1d
-      internalID: -776986053
+      spriteID: e9f791605917bc14993e75b6980d37dc
+      internalID: -1539004129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_2
+      name: (Day 2) Mud training walk 80x48_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
+        x: 160
+        y: 12
+        width: 77
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 353744f9d4240424c88ae94871ad4efb
-      internalID: -1902004687
+      spriteID: aaa3e151b31eedb418d33279a7e77b65
+      internalID: 905845134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_3
+      name: (Day 2) Mud training walk 80x48_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
+        x: 245
+        y: 15
+        width: 72
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7d343e021de0da4ba66194b9cf63b7c
-      internalID: -678764217
+      spriteID: 10b990e950df0d946adc8433bda3383e
+      internalID: 1062894637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_4
+      name: (Day 2) Mud training walk 80x48_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
+        x: 320
+        y: 12
+        width: 74
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,29 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2340c003c46aefc47b4710a9b2cf565c
-      internalID: -1434530610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The corn field_5
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdc18432c88b89c43a0bf9eec32df14b
-      internalID: -1388427749
+      spriteID: 03592ca7567b51747ab169c681331756
+      internalID: 1898847654
       vertices: []
       indices: 
       edges: []
@@ -233,12 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      The corn field_0: 2026766261
-      The corn field_1: -776986053
-      The corn field_2: -1902004687
-      The corn field_3: -678764217
-      The corn field_4: -1434530610
-      The corn field_5: -1388427749
+      (Day 2) Mud training walk 80x48_0: -1676075612
+      (Day 2) Mud training walk 80x48_1: -1539004129
+      (Day 2) Mud training walk 80x48_2: 905845134
+      (Day 2) Mud training walk 80x48_3: 1062894637
+      (Day 2) Mud training walk 80x48_4: 1898847654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

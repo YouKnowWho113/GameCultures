@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cd78394725072141a406fb728a9bdf5
+guid: 9efa3ec65adea564cbb3910f30338e30
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 332, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: The corn field_0
+      name: The Buffalo neutral Idle_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 13
         y: 0
-        width: 16
-        height: 16
+        width: 50
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c06d735224e46f3499c4519166c923b5
-      internalID: 2026766261
+      spriteID: cf152f30023b71f44a8da028b17d273e
+      internalID: -877920669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_1
+      name: The Buffalo neutral Idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 93
         y: 0
-        width: 16
-        height: 16
+        width: 50
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef5049af6d9a6541a476b74142d3c1d
-      internalID: -776986053
+      spriteID: 77f952eafd14bf944933ae5ce18efd12
+      internalID: 1932551566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_2
+      name: The Buffalo neutral Idle_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 175
         y: 0
-        width: 16
-        height: 16
+        width: 48
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 353744f9d4240424c88ae94871ad4efb
-      internalID: -1902004687
+      spriteID: 548310038ec05914f9e3022ec78fb875
+      internalID: 309664574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_3
+      name: The Buffalo neutral Idle_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 253
         y: 0
-        width: 16
-        height: 16
+        width: 50
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7d343e021de0da4ba66194b9cf63b7c
-      internalID: -678764217
+      spriteID: 0433daba3a474c34e8dd6d3f1569303d
+      internalID: 567227684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The corn field_4
+      name: The Buffalo neutral Idle_4
       rect:
         serializedVersion: 2
-        x: 80
+        x: 335
         y: 0
-        width: 16
-        height: 16
+        width: 48
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,29 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2340c003c46aefc47b4710a9b2cf565c
-      internalID: -1434530610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The corn field_5
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdc18432c88b89c43a0bf9eec32df14b
-      internalID: -1388427749
+      spriteID: c173ea62ba61052448612634b5a520c6
+      internalID: 793514056
       vertices: []
       indices: 
       edges: []
@@ -226,19 +205,18 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      The corn field_0: 2026766261
-      The corn field_1: -776986053
-      The corn field_2: -1902004687
-      The corn field_3: -678764217
-      The corn field_4: -1434530610
-      The corn field_5: -1388427749
+      The Buffalo neutral Idle_0: -877920669
+      The Buffalo neutral Idle_1: 1932551566
+      The Buffalo neutral Idle_2: 309664574
+      The Buffalo neutral Idle_3: 567227684
+      The Buffalo neutral Idle_4: 793514056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

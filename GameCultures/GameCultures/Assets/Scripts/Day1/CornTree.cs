@@ -15,9 +15,11 @@ public class CornTree : MonoBehaviour
     [Header("Cooldown Settings")]
     public float cooldownSeconds = 5f;
 
- 
     private bool isOnCooldown = false;
     private SpriteRenderer sr;
+
+
+    private int cornCount = 0;
 
     void Start()
     {
@@ -41,8 +43,7 @@ public class CornTree : MonoBehaviour
         if (isOnCooldown) return;
 
         
-        GameObject prefabToSpawn = (Random.value > 0.6f) ? freshCornPrefab : rottenCornPrefab;
-
+        GameObject prefabToSpawn = (Random.value > 0.5f) ? freshCornPrefab : rottenCornPrefab;
         if (prefabToSpawn == null)
         {
             Debug.LogError("Corn prefab is not assigned!");
@@ -50,7 +51,7 @@ public class CornTree : MonoBehaviour
         }
 
         
-        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0);
+        Vector3 spawnPos = transform.position + new Vector3(0, 1.5f, 0);
         spawnPos.z = 0f;
         GameObject corn = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
         Debug.Log("Spawned corn: " + corn.name);
@@ -59,19 +60,17 @@ public class CornTree : MonoBehaviour
         var cornSr = corn.GetComponent<SpriteRenderer>();
         if (cornSr != null)
         {
-            if (cornSr.sprite == null)
-            {
-                Debug.LogError("Corn prefab has no sprite assigned!");
-            }
-
-            
             cornSr.sortingLayerName = "Default";
             cornSr.sortingOrder = 999;
             cornSr.color = Color.white;
         }
-        else
+
+        
+        Collider2D cornCol = corn.GetComponent<Collider2D>();
+        if (cornCol != null)
         {
-            Debug.LogError("Corn prefab missing SpriteRenderer!");
+            cornCol.enabled = false;
+            StartCoroutine(EnableColliderNextFrame(cornCol));
         }
 
         
@@ -83,15 +82,46 @@ public class CornTree : MonoBehaviour
         StartCoroutine(CooldownRoutine());
     }
 
+    IEnumerator EnableColliderNextFrame(Collider2D col)
+    {
+        yield return null;
+        col.enabled = true;
+    }
+
     IEnumerator CooldownRoutine()
     {
         isOnCooldown = true;
+
+        
         yield return new WaitForSeconds(cooldownSeconds);
+
+        
+        while (cornCount > 0)
+        {
+            yield return null;
+        }
 
         isOnCooldown = false;
         if (sr != null && readySprite != null)
         {
             sr.sprite = readySprite;
+        }
+    }
+
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Corn"))
+        {
+            cornCount++;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Corn"))
+        {
+            cornCount = Mathf.Max(0, cornCount - 1);
         }
     }
 }

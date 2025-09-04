@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9efa3ec65adea564cbb3910f30338e30
+guid: cf1c36854067da24aba4a1b82f33b135
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 332, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: The Buffalo neutral Idle_0
+      name: S-Buttons UI 32x32_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 2
         y: 0
-        width: 50
-        height: 27
+        width: 29
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf152f30023b71f44a8da028b17d273e
-      internalID: -877920669
+      spriteID: 8e0695233cf11ad4cac29bc44aefa028
+      internalID: 611132259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Buffalo neutral Idle_1
+      name: S-Buttons UI 32x32_1
       rect:
         serializedVersion: 2
-        x: 93
+        x: 34
         y: 0
-        width: 50
-        height: 26
+        width: 29
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,71 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77f952eafd14bf944933ae5ce18efd12
-      internalID: 1932551566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Buffalo neutral Idle_2
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 0
-        width: 48
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 548310038ec05914f9e3022ec78fb875
-      internalID: 309664574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Buffalo neutral Idle_3
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 0
-        width: 50
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0433daba3a474c34e8dd6d3f1569303d
-      internalID: 567227684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Buffalo neutral Idle_4
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 0
-        width: 48
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c173ea62ba61052448612634b5a520c6
-      internalID: 793514056
+      spriteID: d55c3038afd70b447a4085c5eec61ee7
+      internalID: 2072941358
       vertices: []
       indices: 
       edges: []
@@ -205,18 +142,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      The Buffalo neutral Idle_0: -877920669
-      The Buffalo neutral Idle_1: 1932551566
-      The Buffalo neutral Idle_2: 309664574
-      The Buffalo neutral Idle_3: 567227684
-      The Buffalo neutral Idle_4: 793514056
+      S-Buttons UI 32x32_0: 611132259
+      S-Buttons UI 32x32_1: 2072941358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
