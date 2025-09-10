@@ -115,7 +115,6 @@ public class DraggableCorn : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
         }
 
-        
         spawnTimer = 0f;
     }
 

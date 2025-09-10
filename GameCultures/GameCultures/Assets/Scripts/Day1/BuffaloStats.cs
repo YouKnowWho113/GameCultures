@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BuffaloStats : MonoBehaviour
@@ -8,7 +9,7 @@ public class BuffaloStats : MonoBehaviour
     public static BuffaloStats Instance { get; private set; }
 
     [Header("UI")]
-    public Slider growthBar;            
+    public Slider growthBar;
     public string barName = "Growth Bar";
 
     [Header("Values")]
@@ -17,7 +18,10 @@ public class BuffaloStats : MonoBehaviour
 
     [Header("Nutrition")]
     public float nutritionFresh = 15f;
-    public float nutritionRotten = -10f; 
+    public float nutritionRotten = -10f;
+
+   
+    private bool hasTriggered = false;
 
     void Awake()
     {
@@ -43,5 +47,18 @@ public class BuffaloStats : MonoBehaviour
         if (growthBar != null) growthBar.value = currentGrowth;
 
         corn.MarkConsumed();
+
+       
+        if (!hasTriggered && currentGrowth >= maxGrowth)
+        {
+            hasTriggered = true;
+            LoadNextDay();
+        }
+    }
+
+    void LoadNextDay()
+    {
+        Debug.Log("🌱 Buffalo fully grown! Loading Day 2...");
+        SceneManager.LoadScene("Day2");
     }
 }

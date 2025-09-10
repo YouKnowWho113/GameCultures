@@ -21,9 +21,14 @@ public class CornTree : MonoBehaviour
 
     private int cornCount = 0;
 
+    [Header("Sound")]
+    public AudioClip pickupSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         if (sr != null)
         {
@@ -37,12 +42,17 @@ public class CornTree : MonoBehaviour
             }
         }
     }
-
+    
     void OnMouseDown()
     {
         if (isOnCooldown) return;
 
-        
+        if (pickupSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(pickupSound);
+        }
+
+
         GameObject prefabToSpawn = (Random.value > 0.5f) ? freshCornPrefab : rottenCornPrefab;
         if (prefabToSpawn == null)
         {

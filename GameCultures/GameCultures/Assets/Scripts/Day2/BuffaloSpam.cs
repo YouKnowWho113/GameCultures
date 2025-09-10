@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class BuffaloSpam : MonoBehaviour
 {
+    [Header("Cloud Prefabs")]
+    public GameObject cloudA;
+    public GameObject cloudS;
+    public GameObject cloudD;
+
+    [Header("Cloud Settings")]
+    public Transform cloudSpawnPoint; 
+
     [Header("UI References")]
     public Slider powerBar;
     public RectTransform lineSlow;
@@ -49,6 +57,9 @@ public class BuffaloSpam : MonoBehaviour
     public float SlowThreshold => slowThreshold;
     public float FastThreshold => fastThreshold;
     public float MinThreshold => minThreshold;
+
+    public char CurrentKey => currentKey;
+    private GameObject activeCloud;
 
     void Start()
     {
@@ -166,35 +177,49 @@ public class BuffaloSpam : MonoBehaviour
 
     void ChooseNewKey()
     {
-        currentKey = keyPool[Random.Range(0, keyPool.Length)];
-
-       
-        int animKey = 0;
-        if (currentKey == 'A') animKey = 0;
-        else if (currentKey == 'S') animKey = 1;
-        else if (currentKey == 'D') animKey = 2;
-
-        if (hintAnimator != null)
+        char newKey;
+        do
         {
-           
-            hintAnimator.SetInteger("CurrentKey", -1);
+            newKey = keyPool[Random.Range(0, keyPool.Length)];
+        } while (newKey == currentKey);
 
-           
-            StartCoroutine(SetHintKeyNextFrame(animKey));
-        }
+        currentKey = newKey;
 
-        previousAnimKey = animKey;
+        
 
         
         keyChangeTimer = 0f;
         nextKeyChangeDelay = Random.Range(5f, 7f);
+
+        
+        SpawnCloud(currentKey);
+
+        
     }
 
-    private System.Collections.IEnumerator SetHintKeyNextFrame(int animKey)
+    void SpawnCloud(char key)
     {
-        yield return null; 
-        hintAnimator.SetInteger("CurrentKey", animKey);
+        
+        if (activeCloud != null)
+        {
+            Destroy(activeCloud);
+        }
+
+        GameObject prefab = null;
+
+        if (key == 'A') prefab = cloudA;
+        else if (key == 'S') prefab = cloudS;
+        else if (key == 'D') prefab = cloudD;
+
+        if (prefab != null && cloudSpawnPoint != null)
+        {
+            
+            activeCloud = Instantiate(prefab, cloudSpawnPoint.position, Quaternion.identity);
+        }
     }
+
+
+    
 
     void UpdateThresholdLines()
     {
