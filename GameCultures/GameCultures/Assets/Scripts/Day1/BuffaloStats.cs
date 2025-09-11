@@ -20,11 +20,13 @@ public class BuffaloStats : MonoBehaviour
     public float nutritionFresh = 15f;
     public float nutritionRotten = -10f;
 
-   
     private bool hasTriggered = false;
+    private float timer = 0f;
+    private float timeLimit = 15f;
 
     void Awake()
     {
+        
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
@@ -34,6 +36,19 @@ public class BuffaloStats : MonoBehaviour
             growthBar.minValue = 0f;
             growthBar.maxValue = maxGrowth;
             growthBar.value = currentGrowth;
+        }
+    }
+
+    void Update()
+    {
+        if (!hasTriggered)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeLimit)
+            {
+                hasTriggered = true;
+                LoadNextDay();
+            }
         }
     }
 
@@ -48,7 +63,6 @@ public class BuffaloStats : MonoBehaviour
 
         corn.MarkConsumed();
 
-       
         if (!hasTriggered && currentGrowth >= maxGrowth)
         {
             hasTriggered = true;
@@ -58,7 +72,17 @@ public class BuffaloStats : MonoBehaviour
 
     void LoadNextDay()
     {
-        Debug.Log("🌱 Buffalo fully grown! Loading Day 2...");
+        Debug.Log("🌱 Buffalo fully grown or time's up! Loading Day 2...");
         SceneManager.LoadScene("Day2");
+    }
+
+    
+    public void ResetGrowth()
+    {
+        currentGrowth = 0f;
+        timer = 0f;
+        hasTriggered = false;
+
+        if (growthBar != null) growthBar.value = currentGrowth;
     }
 }

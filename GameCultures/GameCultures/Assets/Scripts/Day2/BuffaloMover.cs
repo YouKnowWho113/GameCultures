@@ -8,6 +8,11 @@ public class BuffaloMover : MonoBehaviour
     public float slowSpeed = 2f;
     public float fastSpeed = 5f;
 
+    [Header("Audio")]
+    public AudioSource walkAudio; 
+    private float walkTimer;
+    private float nextWalkDelay;
+
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -15,6 +20,11 @@ public class BuffaloMover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        if (walkAudio != null)
+        {
+            walkAudio.playOnAwake = false;
+        }
     }
 
     void Update()
@@ -26,6 +36,8 @@ public class BuffaloMover : MonoBehaviour
             rb.velocity = Vector2.zero;
             animator.SetBool("isExhausted", true);
             animator.SetBool("isWalking", false);
+
+            ResetWalkAudio();
             return;
         }
         else
@@ -35,20 +47,50 @@ public class BuffaloMover : MonoBehaviour
 
         float power = spamScript.CurrentPower;
 
-        if (power < spamScript.MinThreshold) 
+        if (power < spamScript.MinThreshold)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             animator.SetBool("isWalking", false);
+
+            ResetWalkAudio();
         }
-        else if (power < spamScript.SlowThreshold) 
+        else if (power < spamScript.SlowThreshold)
         {
             rb.velocity = new Vector2(slowSpeed, rb.velocity.y);
             animator.SetBool("isWalking", true);
+
+            HandleWalkingAudio();
         }
-        else if (power <= spamScript.FastThreshold) 
+        else if (power <= spamScript.FastThreshold)
         {
             rb.velocity = new Vector2(fastSpeed, rb.velocity.y);
             animator.SetBool("isWalking", true);
+
+            HandleWalkingAudio();
         }
+    }
+
+    void HandleWalkingAudio()
+    {
+        
+        walkTimer += Time.deltaTime;
+
+        if (walkTimer >= nextWalkDelay)
+        {
+            if (walkAudio != null)
+            {
+                walkAudio.PlayOneShot(walkAudio.clip);
+            }
+
+            
+            walkTimer = 0f;
+            nextWalkDelay = Random.Range(3f, 5f);
+        }
+    }
+
+    void ResetWalkAudio()
+    {
+        walkTimer = 0f;
+        nextWalkDelay = Random.Range(3f, 5f);
     }
 }
